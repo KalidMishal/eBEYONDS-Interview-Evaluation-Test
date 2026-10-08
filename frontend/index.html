@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBEYONDS - Movie Library</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#"><img src="assets/images/logo.png" alt="Logoipsum" class="site-logo"></a>
+            </div>
+            <nav class="navigation" id="navigation">
+                <ul>
+                    <li><a href="#" class="active">HOME</a></li>
+                    <li><a href="#">OUR SCREENS</a></li>
+                    <li><a href="#">SCHEDULE</a></li>
+                    <li><a href="#">MOVIE LIBRARY</a></li>
+                    <li><a href="#">LOCATION & CONTACT</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <main>
+        <section class="main-visual">
+            <video autoplay loop muted playsinline class="banner-video">
+                <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.480p.vp9.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section class="movie-library-intro">
+            <div class="container">
+                <h1>MOVIE LIBRARY</h1>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <br>sed diam nonumy eirmod tempor invidunt ut labore et <br>dolore magna aliquyam erat, sed diam voluptua.</p>
+            </div>
+        </section>
+
+        <section class="collect-favorites">
+            <div class="container">
+                <div class="favorites-header">
+                    <h2>Collect your favourites</h2>
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="movie-search" placeholder="Search title and add to grid">
+                    </div>
+                </div>
+                
+                <hr class="separator-line">
+
+                <!-- Search Results Area -->
+                <div id="search-results" class="search-results-container hidden" style="margin-bottom: 50px;">
+                    <h2 style="color: var(--text-white); margin-bottom: 20px;">Search Results</h2>
+                    <div class="grid-container" id="results-grid"></div>
+                </div>
+
+                <div class="grid-container" id="favorites-grid">
+                    <!-- Static Item 1 -->
+                    <div class="grid-item static-item">
+                        <div class="item-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?q=80&w=800&auto=format&fit=crop" alt="Batman Returns">
+                            <button class="remove-btn" title="Remove"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Batman Returns</h3>
+                            <p class="short-desc">Lorem ipsum dolor sit amet, <br>consetetur sadipscing elitr, sed diam <br>nonumy eirmod tempor invidunt ut...</p>
+                        </div>
+                    </div>
+                    <!-- Static Item 2 -->
+                    <div class="grid-item static-item">
+                        <div class="item-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1443916568596-df5a58c445e9?q=80&w=800&auto=format&fit=crop" alt="Wild Wild West">
+                            <button class="remove-btn" title="Remove"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Wild Wild West</h3>
+                            <p class="short-desc">Lorem ipsum dolor sit amet, <br>consetetur sadipscing elitr, sed diam <br>nonumy eirmod tempor invidunt ut...</p>
+                        </div>
+                    </div>
+                    <!-- Static Item 3 -->
+                    <div class="grid-item static-item">
+                        <div class="item-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1604200213928-ba3cf4fc8436?q=80&w=800&auto=format&fit=crop" alt="The Amazing Spiderman">
+                            <button class="remove-btn" title="Remove"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="item-details">
+                            <h3>The Amazing Spiderman</h3>
+                            <p class="short-desc">Lorem ipsum dolor sit amet, <br>consetetur sadipscing elitr, sed diam <br>nonumy eirmod tempor invidunt ut...</p>
+                        </div>
+                    </div>
+                    <!-- Dynamic items will go here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-us">
+            <div class="container contact-container-inner">
+                <div class="form-section">
+                    <h2>How to reach us</h2>
+                    <p class="subtitle">Lorem ipsum dolor sit amet, consetetur.</p>
+                    
+                    <form id="contact-form" action="../backend/submit.php" method="POST">
+                        <div class="form-row">
+                            <div class="form-group half-width">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="first_name">
+                                <span class="error-msg" id="err-first-name"></span>
+                            </div>
+                            <div class="form-group half-width">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="last_name">
+                                <span class="error-msg" id="err-last-name"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email">
+                            <span class="error-msg" id="err-email"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telephone</label>
+                            <input type="tel" id="phone" name="phone">
+                            <span class="error-msg" id="err-phone"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="comments">Message</label>
+                            <textarea id="comments" name="comments" rows="4"></textarea>
+                            <span class="error-msg" id="err-comments"></span>
+                        </div>
+                        
+                        <p class="required-note">*required fields</p>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" name="terms">
+                            <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
+                            <span class="error-msg" id="err-terms"></span>
+                        </div>
+                        
+                        <div class="submit-wrapper">
+                            <button type="submit" id="submit-btn" class="btn-primary">SUBMIT</button>
+                        </div>
+                        <div id="form-feedback" class="form-feedback"></div>
+                    </form>
+                </div>
+                <div class="map-section">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15843.43555239962!2d79.8837078!3d6.9074744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a2df6a0b77b%3A0xb35165d214a1a5b8!2seBEYONDS!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="footer-info">
+                <h3>IT Group</h3>
+                <p>C. Salvador de Madariaga, 1<br>28027 Madrid<br>Spain</p>
+            </div>
+            <div class="footer-social">
+                <span>Follow us on</span>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>Copyright &copy; 2022 IT Hote ls. All rights reserved.</p>
+                <p>Photos by Felix Mooneeram & Serge Kutuzov on <u>Unsplash</u></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
