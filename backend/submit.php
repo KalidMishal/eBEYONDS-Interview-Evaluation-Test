@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userHeaders = "From: noreply@ebeyonds.com\r\n";
         
         // Attempt to send user email (might not work without SMTP server, suppressing warnings with @)
-        @mail($email, $userSubject, $userMessage, $userHeaders);
+        // @mail($email, $userSubject, $userMessage, $userHeaders);
         
         // 2. Admin Email
         $adminTo = "dumidu.kodithuwakku@ebeyonds.com, prabhath.senadheera@ebeyonds.com";
@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $adminHeaders .= "Reply-To: $email\r\n";
         
         // Attempt to send admin email
-        @mail($adminTo, $adminSubject, $adminMessage, $adminHeaders);
+        // @mail($adminTo, $adminSubject, $adminMessage, $adminHeaders);
         
         // Success Response
         $response['status'] = 'success';
